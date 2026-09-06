@@ -222,7 +222,7 @@ https://github.com/guohuiyuan/music-lib
 * qishui-decrypt  
 https://github.com/naiyQAQ/qishui-decrypt
 
-## 📌 TODO（计划中）
+## 📌 TODO
 
 * 增加其他登录方式（如扫码登录等），以便未在 PC 端登录的场景也能使用
 
