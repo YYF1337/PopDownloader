@@ -1,0 +1,14 @@
+node_modules/
+dist/
+.vite/
+Docs
+Mind
+
+# 用户下载产物与本地数据
+download/
+# IDE 配置
+.idea/
+# 诊断/临时文件
+.diag-asar-extract/
+# 含固定 SESSIONID 的本地调试脚本
+t.py
