@@ -12,3 +12,6 @@ download/
 .diag-asar-extract/
 # 含固定 SESSIONID 的本地调试脚本
 t.py
+
+# 打包产物（exe 超过 GitHub 单文件 100MB 限制，走 Release 附件，不入库）
+release/

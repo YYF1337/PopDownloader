@@ -2,13 +2,15 @@
   "name": "popDownloader",
   "version": "1.0.0",
   "description": "Local-first popDownloader app built with Vue, Naive UI, xicons, and Express.",
-  "main": "server/index.js",
+  "main": "electron/main.js",
   "scripts": {
     "dev": "concurrently \"npm:dev:web\" \"npm:dev:server\"",
     "dev:web": "vite",
     "dev:server": "nodemon server/index.js",
     "build": "vite build",
-    "start": "node server/index.js"
+    "start": "node server/index.js",
+    "pack": "electron-builder --dir",
+    "dist": "npm run build && electron-builder --win"
   },
   "repository": {
     "type": "git",
@@ -42,7 +44,36 @@
   "devDependencies": {
     "@vitejs/plugin-vue": "^6.0.6",
     "concurrently": "^9.2.1",
+    "electron": "^33.2.0",
+    "electron-builder": "^25.1.8",
     "nodemon": "^3.1.14",
     "vite": "^8.0.9"
+  },
+  "build": {
+    "appId": "com.yyf1337.popdownloader",
+    "productName": "PopDownloader",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "dist/**/*",
+      "server/**/*",
+      "electron/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": [
+        { "target": "nsis", "arch": "x64" },
+        { "target": "portable", "arch": "x64" }
+      ]
+    },
+    "nsis": {
+      "oneClick": true,
+      "perMachine": false,
+      "artifactName": "PopDownloader-Setup-${version}.exe"
+    },
+    "portable": {
+      "artifactName": "PopDownloader-Portable-${version}.exe"
+    }
   }
 }
